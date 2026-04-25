@@ -12,7 +12,7 @@ const LeftSideCategory = ({ categories, activeId }) => {
 					{categories.map((category) => (
 						<li key={category.category_id}>
 							<Link
-								href={`category/${category.category_id}`}
+								href={`/category/${category.category_id}`}
 								className={`${activeId === category.category_id && "bg-slate-200"} text-lg font-medium text-slate-700 px-20 py-2 rounded block`}
 							>
 								{category.category_name}

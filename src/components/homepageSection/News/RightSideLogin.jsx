@@ -2,7 +2,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const RightSideLogin = () => {
 	return (
-		<div className="space-y-5">
+		<div className="space-y-5 px-3 md:px-0">
 			<p className="text-lg font-semibold text-zinc-700 text-center lg:text-left">
 				Login With
 			</p>

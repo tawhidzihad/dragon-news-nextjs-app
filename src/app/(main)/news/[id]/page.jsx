@@ -4,6 +4,16 @@ import Link from "next/link";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { GoArrowLeft } from "react-icons/go";
 
+export const generateMetadata = async ({ params }) => {
+	const { id } = await params;
+	const { title, details } = await getNewsDetailsById(id);
+
+	return {
+		title: title,
+		description: details,
+	};
+};
+
 const NewsDetailsPage = async ({ params }) => {
 	const { id } = await params;
 
@@ -26,12 +36,17 @@ const NewsDetailsPage = async ({ params }) => {
 							height={800}
 						></Image>
 
-						<h2 className="text-4xl/13 font-bold text-zinc-800">{title}</h2>
+						<h2 className="text-4xl/13 font-bold text-zinc-800">
+							{title}
+						</h2>
 
 						<p className="text-zinc-500 font-medium">{details}</p>
 
 						<Link href={`/category/${category_id}`}>
-							<button className="btn bg-rose-600 text-white"><GoArrowLeft className="text-xl"></GoArrowLeft> All news in this category</button>
+							<button className="btn bg-rose-600 text-white">
+								<GoArrowLeft className="text-xl"></GoArrowLeft> All news
+								in this category
+							</button>
 						</Link>
 					</div>
 				</div>

@@ -1,6 +1,10 @@
 import DemoCard from "@/assets/demo-card-thumbnail.png";
 import Image from "next/image";
 
+export const metadata = {
+	title: "Dragon News - About Us",
+};
+
 const AboutUsPage = () => {
 	return (
 		<div className="bg-gray-50 text-gray-800">

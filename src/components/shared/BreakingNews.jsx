@@ -1,6 +1,7 @@
+import { getNewsByCategory } from "@/lib/getData";
 import Marquee from "react-fast-marquee";
 
-const breakingNews = [
+/* const breakingNews = [
 	{
 		id: 1,
 		title: "Major Earthquake Hits Southeast Asia",
@@ -25,9 +26,12 @@ const breakingNews = [
 		id: 6,
 		title: "Government Announces New Education Policy",
 	},
-];
+]; */
 
-const BreakingNews = () => {
+const BreakingNews = async () => {
+
+	const breakingNews = await getNewsByCategory("01");
+
 	return (
 		<div className="flex justify-between gap-2 items-center bg-zinc-200 p-3 container mx-auto">
 			<button className="btn btn-xs sm:btn-sm md:btn-md bg-rose-600 text-white shadow-none rounded-none border-none">

@@ -16,6 +16,11 @@ const jobs = [
 	},
 ];
 
+export const metadata = {
+	title: "Dragon News - Career",
+};
+
+
 const CareerPage = () => {
 	return (
 		<div className="bg-gray-50 text-gray-800">

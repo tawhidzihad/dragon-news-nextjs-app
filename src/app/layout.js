@@ -9,11 +9,11 @@ const poppins = Poppins({
 	weight: ["400", "500", "600", "700"],
 });
 
-export const montserrat = Montserrat({
-	variable: "--montserrat-font",
-	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
-});
+// export const montserrat = Montserrat({
+// 	variable: "--montserrat-font",
+// 	subsets: ["latin"],
+// 	weight: ["400", "500", "600", "700"],
+// });
 
 export const metadata = {
 	title: "Dragon News",

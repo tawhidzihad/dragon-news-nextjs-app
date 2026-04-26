@@ -34,13 +34,13 @@ const NewsCard = ({ news }) => {
 			</div>
 
 			<div className="px-5 pt-5 border border-zinc-200 rounded-b-lg space-y-3">
-				<h2 className="text-3xl font-bold text-zinc-800">{title}</h2>
+				<h2 className="text-3xl leading-10 font-bold text-zinc-800">{title}</h2>
 				<figure>
 					<Image src={image_url} alt={title} width={800} height={400} />
 				</figure>
 
 				<div>
-					<p className="text-zinc-500 font-medium line-clamp-3">
+					<p className="text-zinc-500 font-medium line-clamp-2">
 						{details}
 					</p>
 					<Link

@@ -17,7 +17,7 @@ const CategoryByNewsPage = async ({ params }) => {
 				></LeftSideCategory>
 			</div>
 
-			<div className="col-span-2 space-y-5 pb-5">
+			<div className="col-span-2 space-y-5 py-5 md:py-0">
 				<p className="text-lg font-semibold text-zinc-700 text-center lg:text-left">
 					Dragon News Home
 				</p>

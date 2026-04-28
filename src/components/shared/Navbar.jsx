@@ -1,11 +1,18 @@
+"use client";
+
 import avater from "@/assets/user.png";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
 import NavLink from "./NavLink";
 
 const Navbar = () => {
+	const { data: session, isPending } = authClient.useSession();
+
+	const user = session?.user;
+
 	return (
-		<div className="container mx-auto py-5 flex justify-between items-center flex-col-reverse gap-4 md:gap-0 md:flex-row">
+		<div className="container mx-auto py-5 flex justify-between items-center flex-col-reverse gap-4 lg:flex-row">
 			<div className="flex-1"></div>
 			<ul className="flex justify-center items-center gap-3 text-zinc-500">
 				<li>
@@ -19,15 +26,38 @@ const Navbar = () => {
 				</li>
 			</ul>
 
-			<div className="flex-1 flex justify-end items-center gap-2">
-				<Image src={avater} alt="avater"></Image>
-				<Link
-					className="btn w-40 bg-gray-700 text-white shadow-none border-none"
-					href={"/login"}
-				>
-					Login
-				</Link>
-			</div>
+			{isPending ? (
+				<div className="flex-1 flex justify-end items-center gap-2">
+					<span className="loading loading-spinner loading-xl"></span>
+				</div>
+			) : user ? (
+				<div className="flex-1 flex justify-end items-center gap-2">
+					<h2>Hey, {user?.name}</h2>
+					<Image
+						// src={user?.image ? user.image : avater}
+						src={user.image || avater}
+						alt="avater"
+						width={40}
+						height={40}
+						className="rounded-full h-10 w-10 object-cover"
+					></Image>
+					<button
+						onClick={async () => await authClient.signOut()}
+						className="btn w-40 bg-gray-700 text-white shadow-none border-none"
+					>
+						Logout
+					</button>
+				</div>
+			) : (
+				<div className="flex-1 flex justify-end items-center gap-2">
+					<Link
+						className="btn w-40 bg-gray-700 text-white shadow-none border-none"
+						href={"/login"}
+					>
+						Login
+					</Link>
+				</div>
+			)}
 		</div>
 	);
 };

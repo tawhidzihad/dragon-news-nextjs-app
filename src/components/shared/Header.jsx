@@ -8,9 +8,8 @@ const Header = () => {
 			<Image
 				src={logo}
 				alt="brand logo"
-				width={400}
-				height={200}
 				className="mx-auto"
+				loading="eager"
 			></Image>
 			<p className="text-gray-500">Journalism Without Fear or Favour</p>
 

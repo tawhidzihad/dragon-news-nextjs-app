@@ -1,6 +1,7 @@
-import Header from "@/components/shared/Header";
-import Navbar from "@/components/shared/Navbar";
-import { Montserrat, Poppins } from "next/font/google";
+import dns from "node:dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({

@@ -35,7 +35,7 @@ const BreakingNews = async () => {
 	return (
 		<div className="flex justify-between gap-2 items-center bg-zinc-200 p-3 container mx-auto">
 			<button className="btn btn-xs sm:btn-sm md:btn-md bg-rose-600 text-white shadow-none rounded-none border-none">
-				Latest News
+				Breaking News
 			</button>
 			<Marquee pauseOnHover={true}>
 				{breakingNews.map((news, ind) => (

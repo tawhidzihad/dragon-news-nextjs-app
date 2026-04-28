@@ -13,8 +13,8 @@ const LoginPage = () => {
 		mode: "onChange",
 	});
 
-	const onSubmit = (data) => {
-      console.log(data);
+	const onSubmit = (onSubmitData) => {
+		console.log(onSubmitData);
 	};
 
 	// const passwordLength = watch("password")?.length || 0;

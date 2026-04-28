@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 
 const RegisterPage = () => {
@@ -12,8 +13,8 @@ const RegisterPage = () => {
 		mode: "onChange",
 	});
 
-	const onSubmit = (data) => {
-      console.log(data);
+	const onSubmit = (onSubmitData) => {
+		console.log(onSubmitData);
 	};
 
 	// const passwordLength = watch("password")?.length || 0;
@@ -22,7 +23,7 @@ const RegisterPage = () => {
 		<div className="container mx-auto min-h-[80vh] flex justify-center items-center">
 			<div className="space-y-8 bg-base-200 py-8 px-8 w-lg">
 				<h1 className="text-3xl font-semibold text-center">
-					Login your account
+					Register your account
 				</h1>
 
 				<div className="divider"></div>
@@ -31,8 +32,7 @@ const RegisterPage = () => {
 					className="fieldset rounded-box space-y-2"
 					onSubmit={handleSubmit(onSubmit)}
 				>
-
-               <p className="text-lg font-medium">
+					<p className="text-lg font-medium">
 						Your Name <span className="text-red-500">*</span>
 					</p>
 					<input
@@ -45,11 +45,11 @@ const RegisterPage = () => {
 						className="input w-full mb-3"
 						placeholder="Enter your Name"
 					/>
-               {errors.name && (
+					{errors.name && (
 						<p className="text-red-500">{errors.name.message}</p>
 					)}
 
-               <p className="text-lg font-medium">
+					<p className="text-lg font-medium">
 						Photo URL <span className="text-red-500">*</span>
 					</p>
 					<input
@@ -62,10 +62,9 @@ const RegisterPage = () => {
 						className="input w-full mb-3"
 						placeholder="Enter your photo url"
 					/>
-               {errors.photo && (
+					{errors.photo && (
 						<p className="text-red-500">{errors.photo.message}</p>
 					)}
-
 
 					<p className="text-lg font-medium">
 						Email address <span className="text-red-500">*</span>
@@ -116,8 +115,15 @@ const RegisterPage = () => {
 						type="submit"
 						// disabled={!isValid}
 					>
-						Login
+						Register
 					</button>
+
+					<p className="text-xs font-medium text-center mt-4">
+						Already Have An Account ?{" "}
+						<Link href={"/login"} className="text-orange-600">
+							Login
+						</Link>
+					</p>
 				</form>
 			</div>
 		</div>
